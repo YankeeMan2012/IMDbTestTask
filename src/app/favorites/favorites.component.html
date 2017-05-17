@@ -1,0 +1,39 @@
+<p class="title">Favorites</p>
+<div class="content">
+    <template ngFor let-film [ngForOf]="films">
+        <md-card class="film" *ngIf="favorites[film.idIMDB]">
+            <md-card-header>
+                <button md-card-avatar md-icon-button (click)="toFavorites(film)">
+                    <md-icon *ngIf="!favorites[film.idIMDB]">favorite_border</md-icon>
+                    <md-icon *ngIf="favorites[film.idIMDB]" color="warn">favorite</md-icon>
+                </button>
+                <md-card-title>{{film.title}}</md-card-title>
+                <md-card-subtitle>{{film.genres}}</md-card-subtitle>
+            </md-card-header>
+            <md-card-content>
+                <div class="box">
+                    <img class="poster" [src]="film.urlPoster">
+                    <div class="wrap">
+                        <p>Year - {{film.year}}</p>
+                        <p>Rating - {{film.rating}}</p>
+                        <p>Countries - {{film.countries}}</p>
+                        <p>Director -
+                            <a *ngFor="let director of film.directors"
+                               href="http://www.imdb.com/name/{{director.id}}"
+                               target="_blank"
+                               class="link">{{director.name}}</a>
+                        </p>
+                    </div>
+                </div>
+                <p>{{film.plot}}</p>
+                <div class="trailers">
+                    <div>Trailers</div>
+                    <button *ngFor="let trailer of trailers[film.idIMDB]" md-icon-button (click)="openTrailer(trailer)">
+                        <md-icon>slideshow</md-icon>
+                    </button>
+                </div>
+            </md-card-content>
+        </md-card>
+    </template>
+
+</div>

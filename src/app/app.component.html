@@ -1,0 +1,30 @@
+<md-toolbar color="primary">
+    <span class="titleApp">IMDbTestTask</span>
+
+    <span class="spacer"></span>
+
+    <button md-icon-button [mdMenuTriggerFor]="menu">
+        <md-icon>more_vert</md-icon>
+    </button>
+    <md-menu #menu="mdMenu">
+        <button md-menu-item routerLink="/">
+            <md-icon>list</md-icon>
+            <span>Top 20</span>
+        </button>
+        <button md-menu-item routerLink="/chart">
+            <md-icon>pie_chart_outlinedart</md-icon>
+            <span>Chart</span>
+        </button>
+        <button md-menu-item routerLink="/favorites">
+            <md-icon>favorite_border</md-icon>
+            <span>Favorites</span>
+        </button>
+    </md-menu>
+</md-toolbar>
+<router-outlet></router-outlet>
+<!--<footer>-->
+    <!--<div class="name">-->
+        <!--Vladimir-->
+    <!--</div>-->
+    <!--<a class="icon gitHubLink" href="https://github.com/YankeeMan2012/PhotosTestTask/tree/master/Photos" target="_blank"></a>-->
+<!--</footer>-->
