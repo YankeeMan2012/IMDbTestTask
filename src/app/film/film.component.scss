@@ -1,0 +1,43 @@
+:host {
+	display: flex;
+}
+
+.film {
+	width: 300px;
+	margin: 10px;
+}
+
+.box {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		transform: rotate(-135deg);
+		left: -30px;
+		bottom: -6px;
+		border: 6px solid transparent;
+		border-top: 6px solid #343434;
+	}
+}
+
+.link {
+	color: #3f51b5;
+	text-decoration: none;
+}
+
+.wrap {
+	margin-left: 24px;
+}
+
+.poster {
+	width: 185px;
+	margin-left: -32px;
+}
+
+.video {
+	width: 500px;
+	margin-bottom: 100px;
+	height: 500px;
+}
