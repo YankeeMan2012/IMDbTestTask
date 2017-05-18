@@ -17,7 +17,7 @@ export class ChartComponent implements OnInit {
         options: {
             width: 1000,
             height: 800,
-            title: 'Films'
+            title: 'Films on decades'
         },
     };
 
@@ -36,11 +36,12 @@ export class ChartComponent implements OnInit {
                         obj[num + 1900 + '-th'] = obj[num + 1900 + '-th'] ? obj[num + 1900 + '-th'] + 1 : 1;
                     }
                 });
-                for ( const key in obj) {
-                    this.pieChartOptions.dataTable.push([key, obj[key]]);
+                for (const key in obj) {
+                    if ({}.hasOwnProperty.call(obj, key)) {
+                        this.pieChartOptions.dataTable.push([key, obj[key]]);
+                    }
                 }
             }
         );
     }
-
 }

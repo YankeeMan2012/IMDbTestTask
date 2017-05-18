@@ -10,6 +10,8 @@ import {AppComponent} from './app.component';
 import {TopComponent} from './top/top.component';
 import {TrailerComponent} from './trailer/trailer.component';
 import {ChartComponent} from './chart/chart.component';
+import {FavoritesComponent} from './favorites/favorites.component';
+import {FilmComponent} from './film/film.component';
 import {routing} from './app.routing';
 
 import {
@@ -18,12 +20,11 @@ import {
     MdDialogModule,
     MdIconModule,
     MdMenuModule,
-    MdToolbarModule
+    MdToolbarModule,
+    MdTooltipModule
 } from '@angular/material';
 
 import {Ng2GoogleChartsModule} from 'ng2-google-charts';
-import {FavoritesComponent} from './favorites/favorites.component';
-
 
 @NgModule({
     imports: [
@@ -36,6 +37,7 @@ import {FavoritesComponent} from './favorites/favorites.component';
         MdButtonModule,
         MdIconModule,
         MdDialogModule,
+        MdTooltipModule,
         BrowserAnimationsModule,
         Ng2GoogleChartsModule,
         routing
@@ -45,7 +47,8 @@ import {FavoritesComponent} from './favorites/favorites.component';
         TopComponent,
         TrailerComponent,
         ChartComponent,
-        FavoritesComponent
+        FavoritesComponent,
+        FilmComponent
     ],
     providers: [HttpService],
     bootstrap: [AppComponent],

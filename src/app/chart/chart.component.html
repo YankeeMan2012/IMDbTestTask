@@ -1,5 +1,5 @@
 <p class="title">Chart</p>
 <div class="content">
-    <google-chart [data]="pieChartOptions"></google-chart>
+    <google-chart *ngIf="pieChartOptions.dataTable.length > 1" [data]="pieChartOptions"></google-chart>
 </div>
 
