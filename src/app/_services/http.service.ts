@@ -26,7 +26,7 @@ export class HttpService {
             .map((resp: Response) => {
                 return resp.json().data.movies;
             })
-            .catch((error: any) => {
+            .catch((error: Error) => {
                 return Observable.throw(error);
             });
     }
@@ -36,7 +36,7 @@ export class HttpService {
             .map((resp: Response) => {
                 return resp.json();
             })
-            .catch((error: any) => {
+            .catch((error: Error) => {
                 return Observable.throw(error);
             });
     }
